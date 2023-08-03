@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF4BF8DB2A7B813100E1E05D /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BF8DA2A7B813100E1E05D /* LocationRequestView.swift */; };
+		AF4BF8DD2A7B816700E1E05D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BF8DC2A7B816700E1E05D /* LocationManager.swift */; };
 		AF76B9812A7B52BD0062CF59 /* SwiftUI_WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF76B9802A7B52BD0062CF59 /* SwiftUI_WeatherApp.swift */; };
 		AF76B9832A7B52BD0062CF59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF76B9822A7B52BD0062CF59 /* ContentView.swift */; };
 		AF76B9852A7B52BE0062CF59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF76B9842A7B52BE0062CF59 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF4BF8DA2A7B813100E1E05D /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
+		AF4BF8DC2A7B816700E1E05D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		AF76B97D2A7B52BD0062CF59 /* SwiftUI-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF76B9802A7B52BD0062CF59 /* SwiftUI_WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherApp.swift; sourceTree = "<group>"; };
 		AF76B9822A7B52BD0062CF59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 				AF76B9842A7B52BE0062CF59 /* Assets.xcassets */,
 				AF76B9862A7B52BE0062CF59 /* Preview Content */,
 				AF76B98E2A7B726A0062CF59 /* WeatherButton.swift */,
+				AF4BF8DA2A7B813100E1E05D /* LocationRequestView.swift */,
+				AF4BF8DC2A7B816700E1E05D /* LocationManager.swift */,
 			);
 			path = "SwiftUI-Weather";
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF76B9832A7B52BD0062CF59 /* ContentView.swift in Sources */,
+				AF4BF8DB2A7B813100E1E05D /* LocationRequestView.swift in Sources */,
+				AF4BF8DD2A7B816700E1E05D /* LocationManager.swift in Sources */,
 				AF76B9812A7B52BD0062CF59 /* SwiftUI_WeatherApp.swift in Sources */,
 				AF76B98F2A7B726A0062CF59 /* WeatherButton.swift in Sources */,
 			);
@@ -274,6 +282,7 @@
 				DEVELOPMENT_TEAM = 4W572TG7MY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +312,7 @@
 				DEVELOPMENT_TEAM = 4W572TG7MY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

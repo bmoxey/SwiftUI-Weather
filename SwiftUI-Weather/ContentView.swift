@@ -9,28 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var locationManager = LocationManager.shared
+    
     @State private var isNight = false
     
     var body: some View {
-        ZStack {
-            BackgroundView(isNight: isNight)
-            VStack {
-                CityTextView(cityName: "Southbank, Vic")
-                MainWeatherView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 23)
-                HStack(spacing: 20) {
-                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 25)
-                    WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 28)
-                    WeatherDayView(dayOfWeek: "THU", imageName: "wind", temperature: 12)
-                    WeatherDayView(dayOfWeek: "FRI", imageName: "wind.snow", temperature: 5)
-                    WeatherDayView(dayOfWeek: "SAT", imageName: "snow", temperature: 2)
+        Group {
+            if locationManager.userLocation == nil {
+                LocationRequestView()
+            } else if let location = locationManager.userLocation {
+                ZStack {
+                    BackgroundView(isNight: isNight)
+                    VStack {
+                        Text("\(location)")
+                        CityTextView(cityName: "Southbank, Vic")
+                        MainWeatherView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temperature: 23)
+                        HStack(spacing: 20) {
+                            WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 25)
+                            WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 28)
+                            WeatherDayView(dayOfWeek: "THU", imageName: "wind", temperature: 12)
+                            WeatherDayView(dayOfWeek: "FRI", imageName: "wind.snow", temperature: 5)
+                            WeatherDayView(dayOfWeek: "SAT", imageName: "snow", temperature: 2)
+                        }
+                        Spacer()
+                        Button {
+                            isNight.toggle()
+                        } label: {
+                            WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+                        }
+                        Spacer()
+                    }
                 }
-                Spacer()
-                Button {
-                    isNight.toggle()
-                } label: {
-                    WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
-                }
-                Spacer()
             }
         }
     }
